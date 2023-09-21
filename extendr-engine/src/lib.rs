@@ -24,30 +24,30 @@ static START_R: Once = Once::new();
 
 pub fn start_r() {
     START_R.call_once(|| {
-        unsafe {
-            if std::env::var("R_HOME").is_err() {
-                // env! gets the build-time R_HOME stored by libR-sys
-                std::env::set_var("R_HOME", env!("R_HOME"));
-            }
+        // unsafe {
+        //     if std::env::var("R_HOME").is_err() {
+        //         // env! gets the build-time R_HOME stored by libR-sys
+        //         std::env::set_var("R_HOME", env!("R_HOME"));
+        //     }
 
-            // Due to Rf_initEmbeddedR using __libc_stack_end
-            // We can't call Rf_initEmbeddedR.
-            // Instead we must follow rustr's example and call the parts.
+        //     // Due to Rf_initEmbeddedR using __libc_stack_end
+        //     // We can't call Rf_initEmbeddedR.
+        //     // Instead we must follow rustr's example and call the parts.
 
-            //let res = unsafe { Rf_initEmbeddedR(1, args.as_mut_ptr()) };
-            // NOTE: R will crash if this is called twice in the same process.
-            Rf_initialize_R(
-                3,
-                [cstr_mut!("R"), cstr_mut!("--slave"), cstr_mut!("--no-save")].as_mut_ptr(),
-            );
+        //     //let res = unsafe { Rf_initEmbeddedR(1, args.as_mut_ptr()) };
+        //     // NOTE: R will crash if this is called twice in the same process.
+        //     Rf_initialize_R(
+        //         3,
+        //         [cstr_mut!("R"), cstr_mut!("--slave"), cstr_mut!("--no-save")].as_mut_ptr(),
+        //     );
 
-            // In case you are curious.
-            // Maybe 8MB is a bit small.
-            // eprintln!("R_CStackLimit={:016x}", R_CStackLimit);
-            R_CStackLimit = usize::MAX;
+        //     // In case you are curious.
+        //     // Maybe 8MB is a bit small.
+        //     // eprintln!("R_CStackLimit={:016x}", R_CStackLimit);
+        //     R_CStackLimit = usize::MAX;
 
-            setup_Rmainloop();
-        }
+        //     setup_Rmainloop();
+        // }
     });
 }
 
@@ -56,9 +56,9 @@ pub fn start_r() {
 fn end_r() {
     unsafe {
         //Rf_endEmbeddedR(0);
-        R_RunExitFinalizers();
+        // R_RunExitFinalizers();
         //CleanEd();
-        R_CleanTempDir();
+        // R_CleanTempDir();
     }
 }
 

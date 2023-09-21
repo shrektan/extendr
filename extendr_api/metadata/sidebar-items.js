@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Arg","Metadata function argument."],["Func","Metadata function."],["Impl","Metadata Impl."],["Metadata","Module metadata."]]});
+window.SIDEBAR_ITEMS = {"fn":["join_str","sanitize_identifier","write_doc","write_function_wrapper","write_impl_wrapper","write_method_wrapper"],"struct":["Arg","Func","Impl","Metadata","RArg"]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Altrep",""]],"trait":[["AltComplexImpl",""],["AltIntegerImpl",""],["AltLogicalImpl",""],["AltRawImpl",""],["AltRealImpl",""],["AltStringImpl",""],["AltrepImpl","Rust trait for implementing ALTREP. Implement one or more of these methods to generate an Altrep class. This is likely to be unstable for a while."]]});
+window.SIDEBAR_ITEMS = {"fn":["manifest"],"macro":["make_from_iterator"],"struct":["Altrep"],"trait":["AltComplexImpl","AltIntegerImpl","AltListImpl","AltLogicalImpl","AltRawImpl","AltRealImpl","AltStringImpl","AltrepImpl"]};

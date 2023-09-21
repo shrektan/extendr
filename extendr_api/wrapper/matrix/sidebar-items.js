@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["RArray","Wrapper for creating and using matrices and arrays."]],"trait":[["MatrixConversions",""]],"type":[["RColumn",""],["RMatrix",""],["RMatrix3D",""]]});
+window.SIDEBAR_ITEMS = {"constant":["BASE"],"struct":["RArray"],"trait":["MatrixConversions","Offset"],"type":["RColumn","RMatrix","RMatrix3D"]};

@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["end_r","Close down the R interpreter. Note you won’t be able to Restart it, so use with care or not at all."],["start_r",""]]});
+window.SIDEBAR_ITEMS = {"fn":["end_r","shutdown_r","start_r","with_r"],"macro":["cstr_mut"],"mod":["shutdown_r___rust_dtor___mod"],"static":["START_R"]};
